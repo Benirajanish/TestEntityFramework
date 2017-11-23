@@ -1,0 +1,17 @@
+﻿@{ 
+    ViewBag.Title = "UpdateCustomerForm";
+}
+
+<h2> </h2>
+
+<form action="/Home/SaveUpdatedCustomer" method="post">
+
+    <label>Customer ID:</label> <input type = "text" name="CustomerID" readonly value ="@ViewBag.RecordToBeUpdated.CustomerID" /><br />
+    <label>Company Name:</label> <input type = "text" name="CompanyName" value ="@ViewBag.RecordToBeUpdated.CompanyName"/><br />
+    <label>City:</label> <input type= "text" name="City" value ="@ViewBag.RecordToBeUpdated.City"/><br />
+    <label>Country:</label> <input type= "text" name="Country" value ="@ViewBag.RecordToBeUpdated.Country"/><br />
+
+    <input type="submit" value="Save" />
+
+
+</form>

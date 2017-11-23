@@ -1,0 +1,19 @@
+﻿@{ 
+
+    ViewBag.Title = "CustomerForm";
+}
+
+@model TestEntityFramework.Models.Customer
+<h2>CustomerForm</h2>
+
+<form action="/Home/SaveCustomer" method="post">
+
+    <label>Customer ID:</label> <input type= "text" name="CustomerID"/><br />
+    <label>Company Name:</label> <input type= "text" name="CustomerID"/><br />
+    <label>City:</label> <input type= "text" name="City"/><br />
+    <label>Country:</label> <input type= "text" name="Country"/><br />
+
+    <input type="submit" value="Save"/>
+
+
+</form>

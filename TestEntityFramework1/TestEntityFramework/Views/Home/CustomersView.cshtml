@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "CustomersView";
+}
+@using TestEntityFramework.Models
+<h2>CustomersView</h2>
+
+
+<a href="/Home/NewCustomerForm">Add New customer</a>
+
+<form action="/Home/ListCustomersByCountry" method="get">
+    <h3>Country</h3>
+    <select name="Country">
+       @foreach(var Country in ViewBag.CountryList)
+       {
+           <option value="@Country">@Country</option>
+       }
+    </select>
+    <input type="submit" value="Search by Country" />
+</form>
+<br />
+<table class="table">
+    <tr>
+        <th>Customer ID</th>
+        <th>Company Name</th>
+        <th>City</th>
+        <th>Country</th>
+    </tr>
+    @foreach (var CustomerRecord in ViewBag.CustomerList)
+    {
+        <tr>
+            <td>
+                @CustomerRecord.CustomerID
+            </td>
+            <td>
+                @CustomerRecord.CompanyName
+            </td>
+            <td>
+                @CustomerRecord.City
+            </td>
+            <td>
+                @CustomerRecord.Country
+            </td>
+            <td><a href="/Home/DeleteCustomer?CustomerID=@CustomerRecord.CustomerID"onclick="return confirm('Are you sure?')">Delete</a></td>
+            <td><a href="/Home/UpdateCustomer?CustomerID=@CustomerRecord.CustomerID" >Update</a></td>
+        </tr>
+    }
+
+</table>
